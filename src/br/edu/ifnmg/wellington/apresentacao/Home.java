@@ -68,7 +68,6 @@ public final class Home extends javax.swing.JFrame {
         this.carregarTabelaDeVeiculos();
         this.carregarTabelaDeMotorista();
         this.carregarTabelaDeUsuarios();
-//        this.carregarTabelaVeiculosDisponiveis();
         this.desabilitarComponentesAdm();
     }
 
@@ -970,11 +969,7 @@ public final class Home extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Usuario logado, acesso permissões de acesso à usuario do tipo Atendente!", "Login - Entrar!", JOptionPane.INFORMATION_MESSAGE);
                     this.btnAcesso.setText("Sair");
                     break;
-                }
-
-                if (!u.getLogin().equals(this.usuarioEmEdicao.getLogin()) && !u.getSenha().equals(senhaMd5) && !(u.getTipo() == 0 || u.getTipo() == 1)) {
-                    throw new LoginEsenhaInvalidoException();
-                }
+                }               
             }
         }
     }
@@ -1044,6 +1039,7 @@ public final class Home extends javax.swing.JFrame {
             this.btnAddNovoUsuario.setEnabled(true);
             this.btnEditarUsuario.setEnabled(true);
             this.btnExcluirUsuario.setEnabled(true);
+            this.btnExcluirCorrida.setEnabled(true);
         }
     }
 
@@ -1058,6 +1054,7 @@ public final class Home extends javax.swing.JFrame {
             this.btnAddNovoUsuario.setEnabled(false);
             this.btnEditarUsuario.setEnabled(false);
             this.btnExcluirUsuario.setEnabled(false);
+            this.btnExcluirCorrida.setEnabled(false);
         }
     }
 

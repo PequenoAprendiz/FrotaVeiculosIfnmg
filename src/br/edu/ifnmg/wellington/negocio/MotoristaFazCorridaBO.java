@@ -14,6 +14,7 @@ import br.edu.ifnmg.wellington.exception.CorridaCorridaSemMotoristas;
 import br.edu.ifnmg.wellington.exception.MotoristaEstaEmOutraCorrida;
 import br.edu.ifnmg.wellington.exception.MotoristaNaoPodeDigirVeiculoException;
 import br.edu.ifnmg.wellington.persistencia.MotoristaFazCorridaDAO;
+import com.sun.org.apache.xml.internal.security.utils.EncryptionConstants;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,12 +55,16 @@ public class MotoristaFazCorridaBO {
         this.motoristaFazCorridas = new ArrayList<>();
         this.motoristaFazCorridas = motoristaFazCorridaDAO.buscarCorridas();
         //if (motoristaFazCorridas != null) {
-            for (MotoristaFazCorrida m : this.motoristaFazCorridas) {
-                if (m.getIdMotorista() == motoristaParaNovaCorrida.getIdMotorista() && m.getIdCorrida() == motoristaParaNovaCorrida.getIdCorrida()) {
-                    throw new MotoristaEstaEmOutraCorrida("Motorista selecionado já está nesta corrida!");
-                }
+        for (MotoristaFazCorrida m : this.motoristaFazCorridas) {
+            if (m.getIdMotorista() == motoristaParaNovaCorrida.getIdMotorista() && m.getIdCorrida() == motoristaParaNovaCorrida.getIdCorrida()) {
+                throw new MotoristaEstaEmOutraCorrida("Motorista selecionado já está nesta corrida!");
             }
-       // }
+
+            if (m.getIdCorrida() != motoristaParaNovaCorrida.getIdCorrida() && m.getIdMotorista() == motoristaParaNovaCorrida.getIdMotorista()) {
+                throw new MotoristaEstaEmOutraCorrida("Motorista selecionado já está em outra corrida!");
+            }
+        }
+        // }
     }
 
     private void carregaListaHabilitacao() throws SQLException {
@@ -113,18 +118,5 @@ public class MotoristaFazCorridaBO {
     public void deletar(int idcorrida) throws SQLException {
         this.motoristaFazCorridaDAO.removerCorrida(idcorrida);
     }
-
-//    public void verificarSeJaAdicionouMoutoristaParaNovaCorrida(int idcorrida) throws SQLException {
-//        this.motoristaFazCorridas = new ArrayList<>();
-//        motoristaFazCorridas = motoristaFazCorridaDAO.buscarCorridas();
-//        for (MotoristaFazCorrida m : motoristaFazCorridas) {
-//            if (m.getIdCorrida() == idcorrida) {
-//                if (m.getIdMotorista() < 0) {
-//                    throw new CorridaCorridaSemMotoristas("Ainda não foi adicionado  motorista a esta corrida!");
-//                } else {
-//                }
-//            }
-//        }
-//    }
 
 }

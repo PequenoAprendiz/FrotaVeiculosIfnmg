@@ -506,9 +506,9 @@ public class FormAddCorrida extends javax.swing.JFrame {
             this.getItemComboCorrida(cbxCorrida.getSelectedItem().toString());
             this.getItemComboMotorista(cbxMotorista.getSelectedItem().toString());
             this.recuperaDadosCorridaEmMotorista();
-            MotoristaFazCorridaBO motoristaFazCorridaBO = new MotoristaFazCorridaBO();
-            // motoristaFazCorridaBO.verificarMotoristaEmOutrasCorridas(this.motoristaParaNovaCorrida);            
+            MotoristaFazCorridaBO motoristaFazCorridaBO = new MotoristaFazCorridaBO();                       
             motoristaFazCorridaBO.definirDadosCorrida(this.motoristaParaNovaCorrida, this.corridas, this.veiculos, this.motoristas);
+            this.home.carregarTabelaDeCorridas();
             JOptionPane.showMessageDialog(this, "Salvo com sucesso!", "Corrida", JOptionPane.INFORMATION_MESSAGE);
             this.limparCamposTela();
             this.dispose();

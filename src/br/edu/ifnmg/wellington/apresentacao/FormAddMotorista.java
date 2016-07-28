@@ -161,8 +161,7 @@ public class FormAddMotorista extends javax.swing.JFrame {
     private void btnSalvarMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarMotoristaActionPerformed
         if (flagEditarMotorista != 1) {
             try {
-                this.incluirMotorista();
-                this.home.carregarTabelaDeMotorista();
+                this.incluirMotorista();                
             } catch (SQLException ex) {
                 Logger.getLogger(FormAddVeiculo.class.getName()).log(Level.SEVERE, null, ex);
             } catch (NoSuchAlgorithmException ex) {
@@ -208,6 +207,7 @@ public class FormAddMotorista extends javax.swing.JFrame {
             this.getItemComboHabiliatacao(cbxTipoHabilitacao.getSelectedItem().toString());
             this.recuperarCamposTelaMotorista();
             this.motoristaBO.incluirMotorista(this.motoristaEmEdicao);
+            this.home.carregarTabelaDeMotorista();
             JOptionPane.showMessageDialog(this, "Cadastrado com sucesso!", "Novo Motorista", JOptionPane.INFORMATION_MESSAGE);
             this.limparCamposTelaNovoMotorista();
 
