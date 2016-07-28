@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7cca93e7-2e38-48fb-b3ac-9bab58dda588">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="somatorioQuilometragem" class="java.lang.Integer"/>
+	<field name="totalCorridasVeiculo" class="java.lang.Integer"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="modelo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="fab821f5-4c0f-4e7c-9bf8-fad33ec09d3b"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="a271e4fa-e5d2-4926-803f-99fea0bb0b1b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Green Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="100" y="46" width="174" height="22" uuid="006f474a-f3ad-40c1-a871-e4c3505a056a"/>
+				<text><![CDATA[Leaf Green SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="141" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="112" width="555" height="1" uuid="db73c824-a125-4eee-be61-775b509ed6d7"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="121" width="126" height="20" uuid="113f8908-669c-425b-aa03-2b44691fb272"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Corridas por veículo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="121" width="126" height="20" uuid="747ba707-9c52-4c46-84c0-0e8670529dfe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Km por veículo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="27" width="100" height="20" uuid="1e42da06-d603-460b-badf-c02457cfb32c"/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="27" width="100" height="20" uuid="0499815a-6901-4e7a-b8a2-7c34edb276c7"/>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="27" width="126" height="20" uuid="594a07f7-7902-458e-a0ef-6fb04240c132"/>
+				<textFieldExpression><![CDATA[$F{totalCorridasVeiculo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="326" y="27" width="145" height="20" uuid="6bc0be20-18fd-4640-8891-e354e229e625"/>
+				<textFieldExpression><![CDATA[$F{somatorioQuilometragem}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="50" height="20" uuid="5f517386-28bf-4857-97ed-a4ca28ed389a"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Modelo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="4" width="126" height="20" uuid="a7255271-f132-49d8-ab0b-985efc7b4f7b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Total corridas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="326" y="4" width="100" height="20" uuid="671aff11-968d-4fd2-a762-8828e9476432"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Quilometragem:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="4" width="35" height="20" uuid="f1e45aa6-fb17-4d80-9ab8-3cc76cb813fe"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Placa:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="198" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="12" width="555" height="1" uuid="31705e66-0c94-4286-8cfc-6bb025c2e8a9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<pieChart>
+				<chart>
+					<reportElement x="0" y="12" width="263" height="186" uuid="2300745a-0ab7-403c-9e66-901deac83d0d"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{modelo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{totalCorridasVeiculo}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<pie3DChart>
+				<chart>
+					<reportElement x="295" y="12" width="258" height="185" uuid="3cfb2ffa-0d29-4e25-b8de-bc43f659b434"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{modelo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{somatorioQuilometragem}]]></valueExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot/>
+					<itemLabel/>
+				</pie3DPlot>
+			</pie3DChart>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fd6e4de8-fd36-4422-a87b-a065229e0984"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="7f3a91d4-1200-46d3-8a6c-4dc1bde8f915"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="c2f7f5da-5919-4f4b-910f-b96083e57a9b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="8c86f570-b2f4-4adb-9917-d837c9339f98"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

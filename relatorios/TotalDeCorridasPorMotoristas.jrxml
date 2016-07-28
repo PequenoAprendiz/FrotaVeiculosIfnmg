@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da72f149-f645-4f96-a216-f9669c3e4af5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="nomeMotorista" class="java.lang.String"/>
+	<field name="totalCorridasPorMotorista" class="java.lang.String"/>
+	<field name="habilitacao" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="8fa5cb9a-94f0-4516-81c6-241d0384da22"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Motoristas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="74" y="46" width="215" height="22" uuid="ebd95e61-34b6-4d29-9fee-68dddc9871a7"/>
+				<text><![CDATA[Informaçõs sobre corridas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="451" y="0" width="92" height="85" uuid="6a823353-085f-4be6-9b0f-76106940e24c"/>
+				<imageExpression><![CDATA["C:\\Users\\Were\\Documents\\NetBeansProjects\\FrotaVeiculosIfnmg\\relatorios\\motoristas.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="4e405113-3bd6-4212-86d8-045689356031"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="307" y="0" width="100" height="20" uuid="c4a4edaa-a62d-4c52-9be7-afb2d14761d8"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Total de corrias realizadas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="0" width="100" height="20" uuid="8efb3b8e-929c-462d-b4fe-b6ba7a7b021d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Motorista]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="175" y="0" width="100" height="20" uuid="fcfaa680-aa23-450c-a1d9-26411854418d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Habilitacao]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="40" width="555" height="1" uuid="7c9d8806-09e3-4e2f-8101-e78f8398e705"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="5" y="9" width="114" height="20" uuid="3f603eed-dd09-4030-84da-010738890e26"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeMotorista}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="11" width="158" height="20" uuid="6ecad28b-a1af-4ef4-9490-d04dad730fc9"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalCorridasPorMotorista}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="11" width="100" height="20" uuid="91e063a7-12bc-4445-81aa-7cce0c6bfa58"/>
+				<textElement>
+					<font fontName="Times New Roman" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{habilitacao}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="a879bbf5-4e5c-4010-945b-0bd4e988e3a9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="f5078270-41e6-4ccd-ada3-b93c5ecdd257"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="e65c46a5-92b7-4d8e-883f-3dfb6c4bba0b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="1008f5c2-ad0e-4033-acca-be163d467e93"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
