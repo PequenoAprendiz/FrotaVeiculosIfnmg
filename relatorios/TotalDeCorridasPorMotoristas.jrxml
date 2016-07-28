@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da72f149-f645-4f96-a216-f9669c3e4af5">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="193"/>
+	<property name="ireport.y" value="87"/>
 	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
@@ -21,8 +21,8 @@
 				<text><![CDATA[Motoristas]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="SubTitle" x="74" y="46" width="215" height="22" uuid="ebd95e61-34b6-4d29-9fee-68dddc9871a7"/>
-				<text><![CDATA[Informaçõs sobre corridas]]></text>
+				<reportElement style="SubTitle" x="74" y="46" width="310" height="22" uuid="ebd95e61-34b6-4d29-9fee-68dddc9871a7"/>
+				<text><![CDATA[Informaçõs sobre corridas realizadas]]></text>
 			</staticText>
 			<image>
 				<reportElement x="451" y="0" width="92" height="85" uuid="6a823353-085f-4be6-9b0f-76106940e24c"/>
@@ -112,7 +112,7 @@
 				<textElement textAlignment="Right">
 					<font size="10" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="e65c46a5-92b7-4d8e-883f-3dfb6c4bba0b"/>
